@@ -31,16 +31,9 @@ const questions = [
         }
     },
     {
-        type: 'confirm',
-        name: 'confirmInstall',
-        message: 'Would you like to add installation instructions?',
-        default: true
-    },
-    {
         type: 'input',
         name: 'installation',
         message: 'Provide some information about yourself:',
-        when: ({ confirmInstall }) => confirmInstall
     },
     {
         type: 'input',
@@ -59,7 +52,7 @@ const questions = [
         type: 'checkbox',
         name: 'licenses',
         message: 'What license do you have for your project?',
-        choices: ['GNU AGPLv3', 'GNU GPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software Liense 1.0']
+        choices: ['GNU AGPLv3', 'GNU GPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'None']
     },
     {
         type: 'input',
@@ -67,16 +60,9 @@ const questions = [
         message: 'Provide guidelines for how other developers to contribute.'
     },
     {
-        type: 'confirm',
-        name: 'confirmTests',
-        message: 'Would you like to add test instructions?',
-        default: false
-    },
-    {
         type: 'input',
         name: 'tests',
         message: 'Provide examples on how to run the tests.',
-        when: ({ confirmTests }) => confirmTests
     },
     {
         type: 'input',
@@ -107,6 +93,8 @@ const questions = [
     // 
 ];
 
+
+
 // function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile('README.md', data, function(err) {
@@ -115,8 +103,6 @@ function writeToFile(fileName, data) {
             return console.log(err);
         }
         console.log("Done!");
-        console.log(data);
-
     })
 }
 
@@ -124,7 +110,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions)
     .then (data => {
-        writeToFile("README.md", generateMarkdown({...data}));
+        writeToFile("README.md", generateMarkdown({...data}));  
     })
 }
 
