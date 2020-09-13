@@ -75,11 +75,11 @@ ${license()}
 ${data.description}
 
 # Table of Contents
-* [Installation](Installation)
-* [Usage](Usage)
-* [Contributing](Contributing)
-* [Tests](Tests)
-* [Questions](Questions)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [Contributing](#Contributing)
+* [Tests](#Tests)
+* [Questions](#Questions)
 
 # Installation
 ${data.installation}
