@@ -4,11 +4,11 @@
 This is an application created to create a readme.md file through the use of the CLI interface. 
 
 # Table of Contents
-* [Installation](Installation)
-* [Usage](Usage)
-* [Contributing](Contributing)
-* [Tests](Tests)
-* [Questions](Questions)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [Contributing](#Contributing)
+* [Tests](#Tests)
+* [Questions](#Questions)
 
 # Installation
 Initially, you will have to clone the code to your local machine. Then install the node modules by running "npm install" in the terminal. Afterwards, run the application by typing "node index.js".
