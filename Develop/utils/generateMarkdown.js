@@ -1,5 +1,7 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
+
+  // function to add license badge if user selects license
   let license = function () {
     let licensesToReturn = []
     for ( let i = 0; i < data.licenses.length; i++) {
@@ -23,7 +25,7 @@ function generateMarkdown(data) {
           licensesToReturn.push('[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)')
           break
         default: 
-          return 'None'
+          return 
       }
     };
 return licensesToReturn.reduce((acc, current) => acc + 
@@ -32,6 +34,7 @@ ${current}
 `, "");
 }
 
+// function to add license notices for licenses the user chooses in the command line
 let noticesFun = function () {
   let notices = []
   for ( let i = 0; i < data.licenses.length; i++) {
@@ -64,9 +67,8 @@ ${current}
 `, "");
 }
 
-
-return `
-# ${data.title}
+// template literal for the readme file
+return `# ${data.title}
 ${license()}
 
 # Description
@@ -99,6 +101,5 @@ ${data.tests}
 * Email: ${data.email}
 `;
 }
-
 
 module.exports = generateMarkdown;
