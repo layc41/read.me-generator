@@ -122,14 +122,11 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-    return inquirer.prompt(questions)
+    inquirer.prompt(questions)
+    .then (data => {
+        writeToFile("README.md", generateMarkdown({...data}));
+    })
 }
 
 // function call to initialize program
-init()
-    .then(data => {
-        return generateMarkdown(data)
-        })
-    .then(readMe => {
-        return writeToFile(readMe);
-        })  
+init();
